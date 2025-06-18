@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://rsms.me/inter/inter.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+  
+  .glass-card-dark {
+    @apply bg-zinc-900/90 backdrop-blur-md border border-zinc-800/50 shadow-sm;
+  }
+}
+
+/* Animation de transition entre les pages */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Styles personnalisés */
+.table-container {
+  @apply bg-white rounded-xl shadow-sm border border-gray-100;
+}
+
+/* Corrections pour les onglets et tabs de shadcn/ui */
+[data-radix-tabs-trigger] {
+  @apply border-0 !important;
+  box-shadow: none !important;
+}
+
+.tabs-list {
+  border: none !important;
+}
+
+.tabs-trigger {
+  border-width: 0 !important;
+  box-shadow: none !important;
+}
+
+[data-state="active"] {
+  border-color: hsl(var(--primary)) !important;
+  border-bottom-width: 2px !important;
+  box-shadow: none !important;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.card-animation-container:nth-child(1) {
+  animation-delay: 0ms;
+}
+.card-animation-container:nth-child(2) {
+  animation-delay: 80ms;
+}
+.card-animation-container:nth-child(3) {
+  animation-delay: 160ms;
+}
+.card-animation-container:nth-child(4) {
+  animation-delay: 240ms;
+}
+.card-animation-container:nth-child(5) {
+  animation-delay: 320ms;
+}
+
+@media (prefers-reduced-motion) {
+  .page-transition-enter {
+    transition: none;
+  }
+  
+  .page-transition-exit {
+    transition: none;
+  }
+}
+@layer components {
+  .rounded-xl {
+    border-radius: 1rem; 
+  }
+}
+@layer components {
+  .request-card {
+    @apply rounded-2xl bg-white border border-border/40 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  }
+  
+  .request-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-1px);
+  }
+  
+  .urgent-card {
+    border-left: 3px solid theme('colors.urgent');
+  }
+
+  .urgent-label {
+    animation: pulse 2s infinite;
+  }
+  
+  .status-badge {
+    @apply inline-flex items-center justify-center rounded-full text-xs font-medium px-2.5 py-0.5 transition-all duration-300;
+  }
+  
+  .btn-action {
+    @apply inline-flex items-center justify-center rounded-full text-sm font-medium transition-all duration-300 ease-in-out text-white;
+  }
+
+  .btn-approve {
+    @apply hover:shadow-green-100;
+  }
+  
+  .btn-reject {
+    @apply hover:shadow-red-100;
+  }
+  
+  .section-header {
+    @apply text-xl font-semibold tracking-tight mb-4;
+  }
+  
+  .section-container {
+    @apply space-y-4 mb-8;
+  }
+}
+
+/* Add glossy effect on cards */
+.gloss-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.gloss-effect:after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: rotate(30deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gloss-effect:hover:after {
+  opacity: 1;
+}
+
+.shadow-elegant {
+  box-shadow: 
+    0 1px 2px rgba(0,0,0,0.02), 
+    0 2px 4px rgba(0,0,0,0.02), 
+    0 4px 8px rgba(0,0,0,0.02), 
+    0 8px 16px rgba(0,0,0,0.02),
+    0 16px 32px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
+
+.shadow-elegant:hover {
+  box-shadow: 
+    0 1px 2px rgba(0,0,0,0.04), 
+    0 2px 4px rgba(0,0,0,0.04), 
+    0 4px 8px rgba(0,0,0,0.04), 
+    0 8px 16px rgba(0,0,0,0.04),
+    0 16px 32px rgba(0,0,0,0.04);
+}
+
+
+.btn-hover-effect {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-hover-effect:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease-out;
+  z-index: -1;
+}
+
+.btn-hover-effect:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
