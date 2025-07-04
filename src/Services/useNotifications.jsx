@@ -10,7 +10,7 @@ import { connectWebSocket, disconnectWebSocket } from './NotificationService';
 import { Button } from '../components/ui/button';
 import { useRef, useMemo } from 'react';
 import demandeSlice from '../Store/DemandeSlice';
-import { demandeApiSlice } from "../Store/demandeApiSlice";
+import { demandeApiSlice } from "../Store/demandeApiSlice ";
 
 function getActionType(type) {
   switch (type) {
