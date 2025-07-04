@@ -10,8 +10,7 @@ import { connectWebSocket, disconnectWebSocket } from './NotificationService';
 import { Button } from '../components/ui/button';
 import { useRef, useMemo } from 'react';
 import demandeSlice from '../Store/demandeSlice';
-import { updateDemande } from '../Store/demandeSlice';
-import { demandeApiSlice } from "../Store/demandeApiSlice ";
+import { demandeApiSlice } from "../Store/demandeApiSlice";
 function getActionType(type) {
   switch (type) {
     case "MODIFICATION_REQUEST": return "modify";
