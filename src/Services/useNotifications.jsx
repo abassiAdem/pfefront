@@ -9,8 +9,9 @@ import { useMarkNotificationAsReadMutation,  useApproveModificationMutation,
 import { connectWebSocket, disconnectWebSocket } from './NotificationService';
 import { Button } from '../components/ui/button';
 import { useRef, useMemo } from 'react';
-import demandeSlice from '../Store/demandeSlice';
+import demandeSlice from '../Store/DemandeSlice';
 import { demandeApiSlice } from "../Store/demandeApiSlice";
+
 function getActionType(type) {
   switch (type) {
     case "MODIFICATION_REQUEST": return "modify";
