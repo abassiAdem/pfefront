@@ -1,6 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from "react"
-import { Card, CardContent } from "@/components/ui/card"
+import { useState, useEffect } from "react" 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,11 +7,10 @@ import { Input } from "@/components/ui/input";
 import { useSelector,useDispatch } from "react-redux"
 import {useGetAllDemandesForChefQuery, useSetStatusAnuleMutation,
   useSetStatusRejectMutation, useSetStatusResponsMutation,useUpdateUrgenceMutation,
-  useSetStatusAcceptMutation,} from "../../Store/demandeApiSlice "
-import DemandeCard from '@/component/demande/demandeCard'
-import DemandeList from './DemandeList '
-import TableDemandes from '../../component/TableDemande'
-import { selectSupervisorDemandes, selectDemandeStatus, selectDemandeError,setCurrentUserId } from '../../Store/DemandeSlice';
+  useSetStatusAcceptMutation,} from "../../Store/demandeApiSlice"
+import DemandeCard from '@/component/demande/DemandeCard'
+import DemandeList from './DemandeList' 
+import {  selectDemandeStatus, selectDemandeError,setCurrentUserId } from '../../Store/DemandeSlice';
 import { toast } from "sonner";
 import { 
   DropdownMenu,
@@ -394,18 +392,4 @@ function ChefHome() {
 
 
 export default ChefHome
-/*        <div className="space-y-6">
-          {requests.map((demande) => (
-            <DemandeCard 
-              key={demande.id}
-              request={demande}
-              onAction={handleAction}
-            />
-          ))}
-          
-          {requests.length === 0 && (
-            <div className="text-center py-12 bg-white rounded-lg border shadow">
-              <p className="text-gray-500">Aucune demande en attente</p>
-            </div>
-          )}
-        </div> */
+ 
