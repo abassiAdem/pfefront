@@ -3,12 +3,13 @@ import { useState, useEffect } from "react"
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
 import { useSelector,useDispatch } from "react-redux"
 import {useGetAllDemandesForChefQuery, useSetStatusAnuleMutation,
   useSetStatusRejectMutation, useSetStatusResponsMutation,useUpdateUrgenceMutation,
   useSetStatusAcceptMutation,} from "../../Store/demandeApiSlice "
 import DemandeCard from '@/component/demande/DemandeCard'
-import DemandeList from './DemandeList' 
+import DemandeList from './DemandeList '; 
 import {  selectDemandeStatus, selectDemandeError,setCurrentUserId } from '../../Store/DemandeSlice';
 import { toast } from "sonner";
 import { 
@@ -39,7 +40,7 @@ import {
   AlertTriangle,
   ThumbsUp
 } from "lucide-react";
-import {StatutDemande} from "../../Store/api";
+ 
 import {
   Popover,
   PopoverContent,
