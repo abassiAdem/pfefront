@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import DetailDemande from '@/component/responsable/DetailDemande';
-import { UrgencyDropdown } from "../../pages/Chef/UrgencyDropdown";
+import { UrgencyDropdown } from "./UrgencyDropdown";
 import { Button } from "@/components/ui/button";
 
 import {
