@@ -1,14 +1,7 @@
 
 import { Client } from "@stomp/stompjs";
 import SockJS from "sockjs-client";
-import { addNotification } from "../Store/notificationSlice";
-import { useDispatch } from "react-redux";
-import demandeSlice from "../Store/demandeSlice";
-import { updateDemande } from '../Store/DemandeSlice';
-import { useEffect } from "react";
-import { apiSlice } from "../api/apiSlice";
-import { toast } from "sonner";
-import { store } from "../Store/store";
+ 
 let stompClient = null;
 let reconnectTimeout = null;
 const BASE_DELAY = 1000; 
