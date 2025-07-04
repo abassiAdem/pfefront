@@ -1,5 +1,5 @@
 import { apiSlice } from "../api/apiSlice";
-import demandeSlice, { updateDemande } from "./demandeSlice";
+import demandeSlice, { updateDemande } from "./DemandeSlice";
 export const demandeApiSlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
 
