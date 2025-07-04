@@ -3,11 +3,10 @@ import { useState, useEffect } from "react"
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
 import { useSelector,useDispatch } from "react-redux"
 import {useGetAllDemandesForChefQuery, useSetStatusAnuleMutation,
   useSetStatusRejectMutation, useSetStatusResponsMutation,useUpdateUrgenceMutation,
-  useSetStatusAcceptMutation,} from "../../Store/demandeApiSlice"
+  useSetStatusAcceptMutation,} from "../../Store/demandeApiSlice "
 import DemandeCard from '@/component/demande/DemandeCard'
 import DemandeList from './DemandeList' 
 import {  selectDemandeStatus, selectDemandeError,setCurrentUserId } from '../../Store/DemandeSlice';
